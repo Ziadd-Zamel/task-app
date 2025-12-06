@@ -41,7 +41,7 @@ export default function HeroSection() {
       <div className="absolute bottom-0 left-0 w-full h-[45vh] sm:h-[60vh] bg-[#F7F7F7]"></div>
 
       {/* Cards Container */}
-      <div className="absolute bg-transparent left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[95%] md:w-[90%] lg:w-[85%] max-w-5xl z-20">
+      <div className="absolute bg-transparent left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[95%] md:w-[90%] lg:w-[85%] max-w-4xl z-20">
         <div className=" rounded-xl shadow-2xl p-4 md:p-6 border-5 border-[#EFEFEF]">
           {/* Grid of Cards */}
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 gap-3 md:gap-4">

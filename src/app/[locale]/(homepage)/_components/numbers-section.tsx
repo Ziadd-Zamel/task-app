@@ -34,7 +34,7 @@ export default function NumbersSection() {
   ];
 
   return (
-    <section className="bg-[#A32329] py-8">
+    <section className="bg-main py-8">
       <div className="box-container gap-12 flex flex-col items-center text-white">
         {/* Title */}
         <SectionTitle title="أرقام منصة مزادات" />

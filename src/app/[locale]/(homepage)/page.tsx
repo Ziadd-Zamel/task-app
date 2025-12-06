@@ -1,6 +1,8 @@
 import AdvantageSection from "./_components/advantage";
 import HeroSection from "./_components/hero-section";
+import NewsSection from "./_components/news-section";
 import NumbersSection from "./_components/numbers-section";
+import TopAuctions from "./_components/top-auctions";
 
 export default function Page() {
   return (
@@ -8,6 +10,8 @@ export default function Page() {
       <HeroSection />
       <AdvantageSection />
       <NumbersSection />
+      <TopAuctions />
+      <NewsSection />
     </>
   );
 }
