@@ -112,11 +112,28 @@
   --sidebar-ring: oklch(0.552 0.016 285.938);
 }
 
+@utility font-poppins {
+  font-family: var(--font-poppins);
+}
+
+@utility font-almarai {
+  font-family: var(--font-almarai);
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
   }
   body {
     @apply bg-background text-foreground;
+  }
+  .flex-center {
+    @apply flex items-center justify-center;
+  }
+  .box-container {
+    @apply container mx-auto w-full px-5 md:px-2 lg:px-5 2xl:max-w-[85%];
+  }
+  .circle {
+    @apply rounded-full aspect-square;
   }
 }
