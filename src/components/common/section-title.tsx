@@ -4,12 +4,14 @@ interface SectionTitleProps {
   title: string;
   align?: "left" | "center" | "right";
   className?: string;
+  lineWidth?: string;
 }
 
 export default function SectionTitle({
   title,
   align = "right",
   className,
+  lineWidth,
 }: SectionTitleProps) {
   const alignmentClasses = {
     left: "text-left items-start",
@@ -21,7 +23,12 @@ export default function SectionTitle({
     <div className={cn(alignmentClasses[align], className, "w-fit")}>
       <div className="flex flex-col items-center">
         <h2 className="text-[22px] font-bold relative inline-block">{title}</h2>
-        <span className="block w-1/2 h-1 bg-second mt-2 relative"></span>
+        <span
+          className={cn(
+            "block h-1 bg-second mt-2 relative",
+            lineWidth ?? " w-1/2"
+          )}
+        ></span>
       </div>
     </div>
   );
