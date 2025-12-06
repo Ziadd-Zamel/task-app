@@ -1,6 +1,6 @@
 "use client";
 
-import { Check, ChevronDown, Globe } from "lucide-react";
+import { Check } from "lucide-react";
 
 import {
   DropdownMenu,
@@ -24,8 +24,8 @@ export function SwitchLocale() {
 
   // Variables
   const languages = [
-    { code: "en", name: "English" },
-    { code: "ar", name: "العربية" },
+    { code: "en", name: "العربية", flag: "🇸🇦" },
+    { code: "ar", name: "English", flag: "🇺🇸" },
   ];
 
   // Functions
@@ -36,30 +36,29 @@ export function SwitchLocale() {
   return (
     <DropdownMenu dir={locale === "ar" ? "rtl" : "ltr"}>
       {/* Trigger */}
-      <DropdownMenuTrigger className="flex h-14 w-[300px] max-w-[400px] items-center justify-between rounded-xl border border-[#DCDBDB] px-4 sm:w-full">
-        <div className="flex items-center gap-2">
-          {/* Icon */}
-          <Globe className="h-4 w-4" />
-
-          {/* Name */}
-          <span className="text-sm font-medium">
-            {languages.find((lang) => lang.code === locale)?.name}
-          </span>
-        </div>
-
-        {/* Icon */}
-        <ChevronDown size={28} strokeWidth={1.2} />
+      <DropdownMenuTrigger className="flex cursor-pointer items-center gap-2 bg-second border-transparent! rounded-lg px-5 h-11">
+        {/* Name */}
+        <span className="text-base font-bold">
+          {languages.find((lang) => lang.code === locale)?.name}
+        </span>
+        {/* Flag */}
+        <span className="text-xl">
+          {languages.find((lang) => lang.code === locale)?.flag}
+        </span>
       </DropdownMenuTrigger>
 
       {/* Dropdown */}
-      <DropdownMenuContent className="w-[300px] sm:w-[400px]" align="center">
+      <DropdownMenuContent className="w-[100px]" align="center">
         {languages.map((language) => (
           <DropdownMenuItem
             key={language.code}
             onClick={() => switchLocale(language.code as Locale)}
             className="flex w-full items-center justify-between"
           >
-            {language.name}
+            <div className="flex items-center gap-2">
+              <span className="text-lg">{language.flag}</span>
+              <span>{language.name}</span>
+            </div>
             {locale === language.code && <Check className="ml-2 h-4 w-4" />}
           </DropdownMenuItem>
         ))}
