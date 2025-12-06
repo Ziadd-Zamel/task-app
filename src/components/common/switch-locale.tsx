@@ -36,13 +36,13 @@ export function SwitchLocale() {
   return (
     <DropdownMenu dir={locale === "ar" ? "rtl" : "ltr"}>
       {/* Trigger */}
-      <DropdownMenuTrigger className="flex cursor-pointer items-center gap-2 bg-second border-transparent! rounded-lg px-5 h-11">
+      <DropdownMenuTrigger className="flex justify-center cursor-pointer items-center gap-2 bg-second border-transparent! rounded-lg  h-8 sm:h-11 sm:px-5 w-20 sm:w-[140px] text-xs sm:text-base ">
         {/* Name */}
-        <span className="text-base font-bold">
+        <span className=" text-xs sm:text-base font-bold">
           {languages.find((lang) => lang.code === locale)?.name}
         </span>
         {/* Flag */}
-        <span className="text-xl">
+        <span className=" text-sm sm:text-xl">
           {languages.find((lang) => lang.code === locale)?.flag}
         </span>
       </DropdownMenuTrigger>

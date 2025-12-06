@@ -33,7 +33,7 @@ export default function Navbar() {
   ];
 
   return (
-    <header className=" text-white">
+    <header className=" text-white -mb-6 relative z-30 ">
       <div className=" bg-main ">
         <div className="box-container flex justify-between py-2">
           <div className="flex items-center justify-center gap-5">
@@ -79,18 +79,22 @@ export default function Navbar() {
               </Button>
 
               {/* Language Switcher */}
-              <SwitchLocale />
+              <div className="sm:block hidden">
+                <SwitchLocale />
+              </div>
 
               {/* Login Button */}
               <Link href="/login">
-                <Button className="h-11 px-5 ">تسجيل الدخول</Button>
+                <Button className=" h-8 sm:h-11 sm:px-5 w-20 sm:w-[140px] text-xs sm:text-base ">
+                  تسجيل الدخول
+                </Button>
               </Link>
             </div>
           </div>
         </div>
       </div>
       {/* Blue Navigation Menu Bar */}
-      <div className="bg-second border-t border-t-white rounded-b-3xl">
+      <div className="bg-second border-t border-t-white rounded-b-3xl shadow-[0px_1px_8px_0px_#00000040]">
         <div className="box-container lg:px-3">
           <div className="flex scrollbar-hide items-center lg:justify-between gap-3 py-1 md:py-3 overflow-x-auto">
             {auctionCategories.map((category) => (
