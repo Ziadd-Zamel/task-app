@@ -138,7 +138,7 @@
     @apply flex items-center justify-center;
   }
   .box-container {
-    @apply container mx-auto w-full px-5 md:px-2 lg:px-5 2xl:max-w-[85%];
+    @apply container mx-auto w-full px-5 md:px-2 lg:px-5 2xl:max-w-[90%];
   }
   .circle {
     @apply rounded-full aspect-square;
