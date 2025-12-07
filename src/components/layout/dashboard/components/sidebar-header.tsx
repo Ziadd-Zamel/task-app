@@ -10,11 +10,15 @@ export function SidebarHeader() {
         <UserDropdown />
         <Notifications />
       </div>
+
       <div className="flex items-center gap-3">
-        <p className="text-lg font-medium font-poppins">Admin Logo</p>
+        <p className=" text-sm sm:text-lg font-medium font-poppins">
+          Admin Logo
+        </p>
         <div className="flex items-center gap-2">
-          <div className="bg-blue-600 size-3 rounded-full aspect-square" />
-          <div className="bg-blue-600 size-3 rounded-full aspect-square" />
+          {/* Smaller by default - larger at sm breakpoint */}
+          <div className="bg-blue-600 size-2 sm:size-3 rounded-full aspect-square" />
+          <div className="bg-blue-600 size-2 sm:size-3 rounded-full aspect-square" />
         </div>
       </div>
     </header>
