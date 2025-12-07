@@ -5,6 +5,6 @@ declare type RouteProps = {
   searchParams: SearchParams;
 };
 
-declare type LayoutProps = {
+declare type MyLayoutProps = {
   children: React.ReactNode;
 } & Pick<RouteProps, "params">;
