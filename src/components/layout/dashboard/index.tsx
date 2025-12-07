@@ -2,6 +2,7 @@ import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar";
 import { AppSidebar } from "./components/app-sidebar";
 import { SidebarHeader } from "./components/sidebar-header";
 import { ReactNode } from "react";
+import { SidebarTrigger } from "@/components/ui/sidebar";
 
 const navItems = [
   { title: "Dashboard", url: "/dashboard", icon: "LayoutDashboard" },
@@ -39,6 +40,7 @@ export default async function DashboardLayout({
           <AppSidebar navItems={navItems} />
           <SidebarInset>
             <div className="w-full bg-gray-50 h-full relative overflow-auto">
+              <SidebarTrigger />
               {children}
             </div>
           </SidebarInset>
