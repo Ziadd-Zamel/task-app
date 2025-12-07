@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 import { hasLocale } from "next-intl";
 import { setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
-import { Raleway, Almarai } from "next/font/google";
+import { Raleway, Almarai, Poppins } from "next/font/google";
 import { cn } from "@/lib/utils/utils";
 
 // English font
@@ -13,6 +13,12 @@ const RalewayFont = Raleway({
   weight: ["200", "300", "400", "500", "600", "700", "800"],
   display: "swap",
   variable: "--font-raleway",
+});
+const PoppinsFont = Poppins({
+  subsets: ["latin"],
+  weight: ["200", "300", "400", "500", "600", "700", "800"],
+  display: "swap",
+  variable: "--font-poppins",
 });
 
 // Arabic font
@@ -50,7 +56,8 @@ export default async function LocaleLayout({ children, params }: LayoutProps) {
           "rtl:text-lg",
           locale === "en" ? RalewayFont.variable : almaraiFont.variable,
           locale === "en" ? RalewayFont.className : almaraiFont.className,
-          locale === "ar" ? "text-2xl" : "text-base"
+          locale === "ar" ? "text-2xl" : "text-base",
+          PoppinsFont.variable
         )}
       >
         <Providers>{children}</Providers>

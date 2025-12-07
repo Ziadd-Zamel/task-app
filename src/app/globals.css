@@ -119,6 +119,9 @@
 @utility font-raleway {
   font-family: var(--font-raleway);
 }
+@utility font-poppins {
+  font-family: var(--font-poppins);
+}
 
 @utility font-almarai {
   font-family: var(--font-almarai);

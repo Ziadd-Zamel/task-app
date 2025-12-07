@@ -8,6 +8,8 @@ import {
   useTimeZone,
 } from "next-intl";
 import { getFormats } from "@/i18n/request";
+import ReactQueryProvider from "./components/react-query.provider";
+import { Toaster } from "../ui/sonner";
 
 type ProvidersProps = {
   children: React.ReactNode;
@@ -22,15 +24,18 @@ export default function Providers({ children }: ProvidersProps) {
 
   return (
     <NextAuthProvider>
-      <NextIntlClientProvider
-        messages={messages}
-        locale={locale}
-        timeZone={timezone}
-        now={now}
-        formats={getFormats(locale as "ar" | "en")}
-      >
-        {children}
-      </NextIntlClientProvider>
+      <ReactQueryProvider>
+        <NextIntlClientProvider
+          messages={messages}
+          locale={locale}
+          timeZone={timezone}
+          now={now}
+          formats={getFormats(locale as "ar" | "en")}
+        >
+          {children}
+          <Toaster />
+        </NextIntlClientProvider>
+      </ReactQueryProvider>
     </NextAuthProvider>
   );
 }
